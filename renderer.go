@@ -71,3 +71,6 @@ type renderer interface {
 
 // repaintMsg forces a full repaint.
 type repaintMsg struct{}
+
+// repaint from external request
+type RequestRepaintMsg struct{}

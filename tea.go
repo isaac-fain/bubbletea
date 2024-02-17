@@ -334,6 +334,10 @@ func (p *Program) eventLoop(model Model, cmds chan Cmd) (Model, error) {
 			case QuitMsg:
 				return model, nil
 
+			// Handle external request to repaint.
+			case RequestRepaintMsg:
+				p.renderer.repaint()
+
 			case clearScreenMsg:
 				p.renderer.clearScreen()
 
